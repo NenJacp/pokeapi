@@ -1,42 +1,80 @@
-# sv
+# PokeAPI - Super Buscador de Pokémon
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Aplicación web desarrollada con SvelteKit, TypeScript y Tailwind CSS para buscar y filtrar Pokémon de la PokéAPI.
 
-## Creating a project
+## Características
 
-If you're seeing this, you've probably already done this step. Congrats!
+-  Búsqueda por nombre o número de Pokémon
+-  Filtrado por tipos (selección múltiple)
+-  Operador NOT para excluir tipos
+-  Diseño moderno con tema oxocarbon
+-  Diseño responsive
+-  Carga de 999 Pokémon desde la PokéAPI
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Requisitos Previos
 
-To recreate this project with the same configuration:
+- Node.js (v18 o superior)
+- pnpm (gestor de paquetes)
 
-```sh
-# recreate this project
-pnpm dlx sv create --template minimal --types ts --install pnpm .
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Instalación
 
 ```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+# Instalar dependencias
+pnpm install
 ```
 
-## Building
+## Desarrollo
 
-To create a production version of your app:
+Inicia el servidor de desarrollo:
 
 ```sh
-npm run build
+pnpm run dev
+
+# o inicia el servidor y abre la app en una nueva pestaña del navegador
+pnpm run dev -- --open
 ```
 
-You can preview the production build with `npm run preview`.
+## Construcción
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Para crear una versión de producción de la aplicación:
+
+```sh
+pnpm run build
+```
+
+Puedes previsualizar la construcción de producción con:
+
+```sh
+pnpm run preview
+```
+
+## Scripts Disponibles
+
+- `pnpm run dev` - Inicia el servidor de desarrollo
+- `pnpm run build` - Construye la aplicación para producción
+- `pnpm run preview` - Previsualiza la construcción de producción
+- `pnpm run check` - Verifica el código con svelte-check
+- `pnpm run check:watch` - Verifica el código en modo watch
+
+## Tecnologías Utilizadas
+
+- **SvelteKit** - Framework web
+- **TypeScript** - Tipado estático
+- **Tailwind CSS v4** - Estilos utilitarios
+- **PokéAPI** - API de datos de Pokémon
+
+## Estructura del Proyecto
+
+```
+pokeapi/
+├── src/
+│   ├── lib/
+│   │   ├── components/     # Componentes Svelte
+│   │   ├── services/       # Servicios de API
+│   │   └── types/          # Tipos TypeScript
+│   └── routes/             # Rutas de SvelteKit
+├── static/                 # Archivos estáticos
+└── package.json           # Dependencias del proyecto
+```
+
+> Para desplegar tu aplicación, puede que necesites instalar un [adaptador](https://svelte.dev/docs/kit/adapters) para tu entorno objetivo.
