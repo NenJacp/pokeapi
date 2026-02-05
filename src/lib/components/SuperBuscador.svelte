@@ -53,7 +53,7 @@
 				id="search"
 				type="text"
 				bind:value={searchText}
-				placeholder="Ej: Pikachu o 25"
+				placeholder="Ej: Bulbasaur o 1"
 				class="w-full px-5 py-3 bg-[#161616] border-2 border-[#3e3e3e] rounded-xl focus:ring-4 focus:ring-[#33d6a6]/30 focus:border-[#33d6a6] outline-none transition-all text-[#d4d4d4] placeholder:text-[#6e6e6e] hover:border-[#5e6ad2]"
 			/>
 		</div>
@@ -103,7 +103,6 @@
 				onclick={clearFilters}
 				class="px-5 py-2.5 text-sm font-medium bg-[#262626] text-[#d4d4d4] rounded-xl hover:bg-[#3e3e3e] transition-all border border-[#3e3e3e] hover:border-[#5e6ad2] transform hover:scale-105 flex items-center gap-2"
 			>
-				<span class="mr-2 text-lg">❌</span>
 				Limpiar Filtros
 			</button>
 		</div>
@@ -112,7 +111,6 @@
 		<div
 			class="text-sm font-semibold text-[#d4d4d4] bg-[#262626] px-5 py-3 rounded-xl border-2 border-[#3e3e3e] flex items-center justify-center gap-2"
 		>
-			<span class="mr-2 text-[#33d6a6]">📊</span>
 			<span class="font-bold text-[#33d6a6]">{filteredCount}</span>
 			<span class="text-[#a0a0a0]">de</span>
 			<span class="font-bold text-[#33d6a6]">{pokemons.length}</span> Pokémon

@@ -12,7 +12,7 @@ export const getPokemons = async (): Promise<Pokemon[]> => {
 		const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=999');
 		if (!response.ok) {
 			throw new PokemonApiError(
-				`Error al obtener la lista de Pokémon: ${response.statusText}`,
+				'No pudimos cargar los Pokémon en este momento. Por favor, intenta de nuevo más tarde.',
 				response.status
 			);
 		}
@@ -23,7 +23,7 @@ export const getPokemons = async (): Promise<Pokemon[]> => {
 				const pokemonResponse = await fetch(pokemon.url);
 				if (!pokemonResponse.ok) {
 					throw new PokemonApiError(
-						`Error al obtener detalles de ${pokemon.name}: ${pokemonResponse.statusText}`,
+						'Hubo un problema al cargar algunos Pokémon. Por favor, intenta de nuevo.',
 						pokemonResponse.status
 					);
 				}
@@ -48,7 +48,7 @@ export const getPokemons = async (): Promise<Pokemon[]> => {
 	} catch (error) {
 		if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
 			throw new PokemonApiError(
-				'No se pudo conectar con la PokéAPI. Revisa tu conexión a internet.',
+				'No pudimos conectarnos con el servidor. Por favor, verifica tu conexión a internet e intenta de nuevo.',
 				0
 			);
 		}

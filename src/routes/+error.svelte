@@ -2,16 +2,16 @@
 	import { page } from '$app/stores';
 </script>
 
-<div class="min-h-screen flex flex-col items-center justify-center bg-[#161616] p-4" >
+<div class="min-h-screen flex flex-col items-center justify-center bg-[#161616] p-4">
 	<div
-		class="bg-[#1e1e1e] border-2 border-[#ff6b6b] rounded-3xl p-10 shadow-2xl max-w-md w-full text-center animate-fade-in"
+		class="bg-[#1e1e1e] border-2 border-[#ff6b6b] rounded-3xl p-10 shadow-2xl max-w-lg w-full text-center animate-fade-in"
 	>
-		<div class="mb-6">
-			<div
-				class="bg-[#ff6b6b] rounded-full p-6 inline-block shadow-lg transform hover:scale-110 transition-transform"
-			>
-				<span class="text-6xl">⚠️</span>
-			</div>
+		<div class="mb-6 flex justify-center">
+			<img
+				src="/Error.png"
+				alt="Error"
+				class="w-32 h-32 object-contain"
+			/>
 		</div>
 		<h1 class="text-5xl font-bold text-[#ff6b6b] mb-4">
 			Error {$page.status}
@@ -32,7 +32,6 @@
 			href="/"
 			class="inline-flex items-center px-6 py-3 bg-[#33d6a6] text-[#161616] font-semibold rounded-xl hover:bg-[#2ec493] focus:outline-none focus:ring-4 focus:ring-[#33d6a6]/30 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
 		>
-			<span class="mr-2 text-xl">🏠</span>
 			Volver al inicio
 		</a>
 	</div>

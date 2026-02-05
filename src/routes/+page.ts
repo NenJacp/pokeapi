@@ -9,12 +9,12 @@ export const load: PageLoad = async () => {
 			error: null
 		};
 	} catch (error) {
-		let errorMessage = 'Error desconocido al cargar los Pokémon';
+		let errorMessage = 'Ocurrió un error inesperado. Por favor, intenta recargar la página.';
 
 		if (error instanceof PokemonApiError) {
 			errorMessage = error.message;
 		} else if (error instanceof Error) {
-			errorMessage = error.message;
+			errorMessage = 'Algo salió mal. Por favor, intenta de nuevo más tarde.';
 		}
 
 		return {

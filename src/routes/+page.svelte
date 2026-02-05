@@ -49,25 +49,32 @@
 </script>
 
 {#if data.error}
-	<div
-		class="bg-[#1e1e1e] border-2 border-[#ff6b6b] rounded-2xl p-8 shadow-xl max-w-2xl mx-auto animate-fade-in"
-	>
-		<div class="flex flex-col items-center text-center">
-			<div
-				class="bg-[#ff6b6b] rounded-full p-4 mb-4 shadow-lg transform hover:scale-110 transition-transform"
-			>
-				<span class="text-5xl">⚠️</span>
+	<div class="min-h-[60vh] flex items-center justify-center p-4">
+		<div
+			class="bg-[#1e1e1e] border-2 border-[#ff6b6b] rounded-2xl p-10 shadow-xl max-w-lg w-full animate-fade-in"
+		>
+			<div class="flex flex-col items-center text-center">
+				<div class="mb-6 flex justify-center">
+					<img
+						src="/Error.png"
+						alt="Error"
+						class="w-32 h-32 object-contain"
+					/>
+				</div>
+				<h3 class="text-3xl font-bold text-[#ff6b6b] mb-4">
+					¡Ups! Algo salió mal
+				</h3>
+				<p class="text-[#d4d4d4] mb-8 text-lg leading-relaxed px-4">
+					{data.error}
+				</p>
+				<button
+					type="button"
+					onclick={retry}
+					class="inline-flex items-center px-8 py-4 bg-[#ff6b6b] text-white font-semibold rounded-xl hover:bg-[#ff5252] focus:outline-none focus:ring-4 focus:ring-[#ff6b6b]/30 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-lg"
+				>
+					Intentar de nuevo
+				</button>
 			</div>
-			<h3 class="text-2xl font-bold text-[#ff6b6b] mb-3">¡Oops! Algo salió mal</h3>
-			<p class="text-[#d4d4d4] mb-6 text-lg">{data.error}</p>
-			<button
-				type="button"
-				onclick={retry}
-				class="inline-flex items-center px-6 py-3 bg-[#ff6b6b] text-white font-semibold rounded-xl hover:bg-[#ff5252] focus:outline-none focus:ring-4 focus:ring-[#ff6b6b]/30 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
-			>
-				<span class="mr-2 text-xl">🔄</span>
-				Reintentar
-			</button>
 		</div>
 	</div>
 {:else if data.pokemons && data.pokemons.length > 0}
@@ -97,7 +104,6 @@
 			<div
 				class="inline-block bg-[#1e1e1e] rounded-full p-8 mb-6 shadow-lg transform hover:scale-110 transition-transform border border-[#3e3e3e]"
 			>
-				<span class="text-7xl">🔍</span>
 			</div>
 			<h3 class="text-2xl font-bold text-[#d4d4d4] mb-3">
 				No se encontraron resultados
@@ -114,7 +120,6 @@
 				}}
 				class="inline-flex items-center px-5 py-2.5 bg-[#33d6a6] text-[#161616] font-semibold rounded-xl hover:bg-[#2ec493] shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
 			>
-				<span class="mr-2 text-lg">❌</span>
 				Limpiar Filtros
 			</button>
 		</div>
